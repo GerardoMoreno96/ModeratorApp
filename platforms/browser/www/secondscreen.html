@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Moderador v1.0</title>
+        <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+/*
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+*/
+/*
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+*/
+    .message-form__button {
+        font-size: 20;
+        margin: 10px;
+        margin-left: 37%;
+        margin-right: 50%
+        margin: 300 auto;
+        float: left;
+    }
+  </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <h1 style="font-family: sans-serif"><center>Bienvenido</center></h1>
+        <div id="result"></div>
+        <label id="usuario" style="font-family: sans-serif; font-size: 30;">
+            <center>
+                <script>
+                    document.getElementById('usuario').style.display = "block"; 
+                    document.getElementById('usuario').style.textAlign = "center"
+                    document.getElementById('usuario').textContent = localStorage.getItem("Name").toString(); 
+                </script>
+            </center>
+        </label>
+        <center>
+            <form class="message-form" onsubmit="return false;">
+                <input class="message-form__input" placeholder="" type="hidden" disabled/>
+                <center><input class="message-form__button" value="Comentar" type="submit" placeholder=""/></center>
+            </form>
+        </center>
+        <div class="members-count">-</div>
+        <div class="members-list">-</div>
+        <div class="messages"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
